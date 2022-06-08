@@ -1,8 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
 const companies = [
   { name: "Samsung", category: "Electronics", start: 1981, end: 2004 },
@@ -20,19 +20,26 @@ const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 const person = {
   name: "Costas",
   address: {
-    street: "Lalaland 12"
-  }
+    street: "Lalaland 12",
+  },
 };
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-<>
-{companies.map((el)=>(
-  // console.log(el.name);
-   <h3>{el.name}</h3>
-))}
-</>
-  
+  <>
+    {/* {companies.map((el) => (
+      // console.log(el.name);
+      <h3>{el.name}</h3>
+    ))} */}
+    <div>
+  {companies.filter(name => name.start > 1987).map(filteredname => (
+    <li>
+      {filteredname.name}
+    </li>
+  ))}
+</div>
+  </>
 );
 
 // If you want to start measuring performance in your app, pass a function
